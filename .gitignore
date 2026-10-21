@@ -1,0 +1,7 @@
+uploads/
+assets/
+work/
+.playwright-cli/
+__pycache__/
+.DS_Store
+NOTES.md
