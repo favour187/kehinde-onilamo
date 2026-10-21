@@ -217,7 +217,7 @@
   .pdf-list .sub{display:block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#8B8374;margin-top:3px}
   .pdf-side-foot{padding:14px 22px 0;border-top:1px solid rgba(35,32,25,.09);font-size:10px;color:#8B8374;line-height:1.6}
 
-  .pdf-main{display:flex;flex-direction:column;min-width:0;min-height:0;width:100%;overflow:hidden;background:#E9E4D9}
+  .pdf-main{display:flex;flex-direction:column;min-width:0;min-height:0;width:100%;overflow:hidden;background:#fff}
   .pdf-toolbar{flex:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:#F7F4EE;border-bottom:1px solid rgba(35,32,25,.1);min-width:0;flex-wrap:wrap}
   .pdf-toolbar .pg{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6C655A}
   .pdf-toolbar .pg b{color:var(--ink)}
@@ -227,9 +227,9 @@
   .pdf-ctrl button:disabled{opacity:.35;cursor:not-allowed}
   .pdf-hint{font-size:10px;letter-spacing:.08em;color:#8B8374}
 
-  .pdf-view{flex:1 1 auto;min-height:0;min-width:0;width:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scroll-snap-type:y mandatory;padding:22px 16px 56px;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:rgba(35,32,25,.3) transparent}
-  .pdf-page{scroll-snap-align:center;margin:0 auto 26px;width:100%;max-width:520px;background:#fff;box-shadow:0 18px 40px -18px rgba(35,32,25,.45);border:1px solid rgba(35,32,25,.1);overflow:hidden;border-radius:2px}
-  .pdf-page img{width:100%;height:auto;display:block}
+  .pdf-view{flex:1 1 auto;min-height:0;min-width:0;width:100%;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y proximity;padding:0;background:#fff;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:rgba(35,32,25,.35) transparent}
+  .pdf-page{scroll-snap-align:start;margin:0 auto;width:100%;max-width:100%;background:#fff;box-shadow:none;border:0;border-radius:0;overflow:hidden}
+  .pdf-page img{width:100%;height:auto;display:block;image-rendering:auto}
   .pdf-cap{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;border-top:1px solid rgba(35,32,25,.08);background:#FCFAF6}
   .pdf-cap .n{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text)}
   .pdf-cap .f{font-size:9px;letter-spacing:.1em;color:#9A9284}
@@ -237,6 +237,12 @@
   .docs-note{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 26px;font-size:11.5px;color:var(--muted);letter-spacing:.02em}
   .docs-note span{display:inline-flex;align-items:center;gap:8px}
   .docs-note span::before{content:"◆";font-size:7px;color:var(--gold)}
+  .docs-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:26px}
+  .docs-foot .docs-note{margin-top:0}
+  .docs-next{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border:1px solid rgba(35,32,25,.28);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);transition:background .25s,border-color .25s,transform .25s}
+  .docs-next:hover{background:var(--green);border-color:var(--green);color:#F3EBDC;transform:translateY(-2px)}
+  .docs-next svg{flex:none}
+  @media (max-width:620px){ .docs-foot{flex-direction:column;align-items:stretch} .docs-next{justify-content:center} }
 
   /* ================= REFERENCES ================= */
   .refs{background:var(--paper);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:104px 0}
@@ -320,7 +326,7 @@
     .pdf-thumb{width:36px;height:48px}
     .pdf-side-foot{display:none}
     .pdf-main{width:100%;overflow:visible}
-    .pdf-view{flex:none;width:100%;height:min(72vh,640px);padding:16px 12px 44px}
+    .pdf-view{flex:none;width:100%;padding:0}
   }
   @media (max-width:760px){
     .section,.expertise,.education,.docs-sec,.refs,.contact{padding:78px 0}
@@ -340,8 +346,7 @@
     .footer-bottom{flex-direction:column;align-items:flex-start;gap:10px}
     .footer-bottom .dot-sep{display:none}
     .portrait-card{left:10px;bottom:-20px;padding:15px 18px;max-width:236px}
-    .pdf-view{height:min(76vh,620px);padding:14px 10px 40px}
-    .pdf-page{width:100%;max-width:100%;border-radius:0;box-shadow:0 8px 22px -12px rgba(35,32,25,.4)}
+    .pdf-view{padding:0}
     .pdf-toolbar{padding:9px 12px}
     .pdf-hint{display:none}
   }
@@ -358,7 +363,8 @@
     .site-header,.mobile-menu,.pdf-side,.pdf-toolbar,.pdf-hint,.form-card,.hero-actions,.to-top,.avail,.docs-note{display:none!important}
     .pdf-shell{grid-template-columns:1fr;height:auto;border:0;box-shadow:none}
     .pdf-view{height:auto;overflow:visible;padding:0;scroll-snap-type:none;background:#fff}
-    .pdf-page{width:88%;box-shadow:none;border:1px solid #ddd;break-inside:avoid;page-break-inside:avoid;margin-bottom:14px}
+    .pdf-page{width:88%!important;height:auto!important;box-shadow:none;border:1px solid #ddd;break-inside:avoid;page-break-inside:avoid;margin-bottom:14px}
+    .pdf-view{height:auto!important;max-height:none!important}
     .quote-band,.contact{background:#fff!important;color:#232019!important}
     .contact h2,.contact h2 em,.quote-band blockquote{color:#232019!important}
     .contact-list .cv,.contact-list .cl,.contact p.intro{color:#4A443A!important}
@@ -729,10 +735,16 @@
         </div>
       </div>
 
-      <div class="docs-note reveal">
-        <span>Original documents · available at interview</span>
-        <span>PGDE awarded 2024</span>
-        <span>HND &amp; ND — Lower Credit</span>
+      <div class="docs-foot reveal">
+        <div class="docs-note">
+          <span>Original documents · available at interview</span>
+          <span>PGDE awarded 2024</span>
+          <span>HND &amp; ND — Lower Credit</span>
+        </div>
+        <a class="docs-next" href="#referees">
+          Continue to referees
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -956,6 +968,36 @@
   });
 
   setActive(0);
+
+  /* ---- Fit every page to the four corners of the viewer ---- */
+  function fitViewer(){
+    if (!pages.length) return;
+    const img = pages[0].querySelector('img');
+    const ratio = (img && img.naturalWidth) ? (img.naturalHeight / img.naturalWidth) : (1754/1240);
+    const cap = Math.min(window.innerHeight * 0.86, 900);
+
+    // force the scrollbar to exist first, so the measured width is the true usable width
+    view.style.height = cap + 'px';
+    const vw = Math.max(200, view.clientWidth);
+
+    pages.forEach(p => { p.style.width = vw + 'px'; });
+    const captionH = Math.max(0, pages[0].offsetHeight - Math.round(vw * ratio));
+
+    let pageW = vw;
+    let totalH = Math.round(pageW * ratio) + captionH;
+    if (totalH > cap){                        // too tall for the screen: scale down, stay centred
+      pageW = Math.floor((cap - captionH) / ratio);
+      totalH = Math.round(pageW * ratio) + captionH;
+    }
+    pages.forEach(p => { p.style.width = pageW + 'px'; });
+    view.style.height = totalH + 'px';
+  }
+
+  fitViewer();
+  window.addEventListener('resize', fitViewer, {passive:true});
+  window.addEventListener('orientationchange', () => setTimeout(fitViewer, 250));
+  window.addEventListener('load', fitViewer);
+  setTimeout(fitViewer, 400);
 
   /* Contact form → mailto */
   const form = document.getElementById('contactForm');
