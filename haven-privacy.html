@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Haven — Privacy Policy</title>
+<meta name="description" content="Haven keeps everything on your device. No ads, no analytics, no account.">
+<style>
+  :root { --ink:#20303c; --soft:#5c7285; --line:#dbe4ea; --accent:#4a6b8a; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:#f4f7f9; line-height:1.65; }
+  main { max-width:760px; margin:0 auto; padding:36px 20px 72px; background:#fff; }
+  h1 { font-size:1.9rem; line-height:1.2; margin:0 0 .2rem; letter-spacing:-.01em; }
+  h2 { font-size:1.18rem; margin:2rem 0 .5rem; color:var(--accent); }
+  h3 { font-size:1rem; margin:1.4rem 0 .3rem; }
+  p, li { font-size:1rem; }
+  ul, ol { padding-left:1.25rem; }
+  li { margin:.35rem 0; }
+  hr { border:0; border-top:1px solid var(--line); margin:2rem 0; }
+  table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+  th, td { text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { background:#eef3f7; font-weight:600; }
+  code { background:#eef3f7; padding:.1rem .3rem; border-radius:4px; font-size:.9em; }
+  .top { display:flex; align-items:center; gap:.6rem; margin-bottom:1.2rem; }
+  .badge { width:38px; height:38px; border-radius:11px; background:#e3eef6; display:grid; place-items:center; font-size:1.2rem; }
+  .meta { color:var(--soft); font-size:.9rem; }
+  footer { color:var(--soft); font-size:.85rem; border-top:1px solid var(--line); margin-top:2.5rem; padding-top:1rem; }
+  @media print { body { background:#fff; } main { padding:0; } }
+</style>
+</head>
+<body>
+<main>
+<div class="top"><div class="badge">🌿</div><div><strong>Haven</strong><div class="meta">Communication, for people who find speaking hard</div></div></div>
+<h1>Haven — Privacy Policy</h1>
+<p><strong>Version 1.9.16 · Effective 29 October 2026</strong></p>
+<p>Haven is an app for people who find speaking hard, and for the adults who look after them. This page says, in plain words, what happens to information.</p>
+<p>Written by <strong>Favour Onilamo</strong> (favour187). Contact: <strong>favourope78@gmail.com</strong>.</p>
+<hr>
+<h2>The short version</h2>
+<ul>
+<li><strong>There is no account and no Haven server.</strong> Your records are not uploaded to us, because there is nowhere for them to go.</li>
+</ul>
+<ul>
+<li><strong>Three things leave the phone</strong>, and only when you press a button: 1. the words you type into the online AI (Groq), if you add your own key; 2. the words you type into the film search, sent to the Internet Archive; 3. payment details, when you pay for Haven Plus, handled by Paystack.</li>
+</ul>
+<ul>
+<li><strong>No ads. No analytics. No crash reporting. No tracking. Nothing is sold.</strong></li>
+</ul>
+<ul>
+<li><strong>Uninstalling the app deletes everything it kept.</strong></li>
+</ul>
+<hr>
+<h2>1. What Haven keeps on your phone</h2>
+<p>Everything below stays in the app&#x27;s private storage on your device. It is never uploaded to Haven.</p>
+<table><tbody>
+<tr><th>What</th><th>Where</th><th>Why</th></tr>
+<tr><td>Pictures on the board, and photographs you take</td><td>inside the encrypted database</td><td>so the person can ask for things</td></tr>
+<tr><td>Routines, schedules, appointments, records</td><td>encrypted database</td><td>so the day is written down</td></tr>
+<tr><td>Mood, sleep, body and sensory notes</td><td>encrypted database</td><td>so patterns can be seen</td></tr>
+<tr><td>What Haven noticed (counts of taps, yes/no, films watched)</td><td>encrypted database</td><td>to write the brief for the caregiver</td></tr>
+<tr><td>Messages between the caregiver&#x27;s space and the person&#x27;s</td><td>encrypted database</td><td>the two-way picture messages</td></tr>
+<tr><td>Films downloaded from the internet</td><td>app storage folders</td><td>so they play with no internet</td></tr>
+<tr><td>The caregiver&#x27;s passphrase</td><td><strong>not stored</strong> — only a PBKDF2-SHA256 hash and salt</td><td>to unlock the caregiver space</td></tr>
+</tbody></table>
+<p>The database is encrypted with SQLCipher. Each install creates <strong>its own random key</strong>, stored in the app&#x27;s private preferences on that phone and sent nowhere. Phones that had Haven before version 1.9.16 keep the older key so that no existing record is ever put at risk by an upgrade.</p>
+<h2>2. What leaves the phone, and when</h2>
+<p>Only these four, and none of them happen on their own.</p>
+<p><strong>a) The online AI (Groq).</strong> If — and only if — a caregiver has saved a Groq API key and presses <em>Ask Groq</em> with a working connection, the text of their question is sent to Groq&#x27;s servers to be answered. No name, no photograph, no record, no list of anything else goes with it. Without a key, Haven never contacts Groq. Groq&#x27;s own privacy terms apply to that text.</p>
+<p><strong>b) The film search (Internet Archive).</strong> When a caregiver searches for a film, the words they type are sent to <code>archive.org</code>, which returns public results. The request identifies Haven (its name and project URL) and nothing about you. When a film is downloaded, the file comes from <code>archive.org</code>. Nothing is searched or downloaded unless a caregiver asks.</p>
+<p><strong>c) Payments (Paystack, and Haven&#x27;s payment worker).</strong> When someone pays for Haven Plus or Clinic, the email address they type and the payment are handled by <strong>Paystack</strong>, a licensed payment processor. Haven&#x27;s small payment worker on Cloudflare receives a payment reference to confirm the purchase, and stores the reference — not your card, not your name. Card details never touch Haven.</p>
+<p><strong>d) Sharing between two phones (optional).</strong> If a caregiver turns on sharing so another phone receives the day, the summary is <strong>sealed on the phone before it leaves</strong> and relayed through a mailbox on Cloudflare. The relay stores ciphertext and a sequence number; it cannot read the summary, and the person can turn sharing off at any time, which deletes what is waiting there.</p>
+<h2>3. What Haven never does</h2>
+<ul>
+<li>No advertising, and no advertising identifier.</li>
+</ul>
+<ul>
+<li>No analytics or usage tracking SDK of any kind.</li>
+</ul>
+<ul>
+<li>No crash reporting that sends your data anywhere.</li>
+</ul>
+<ul>
+<li>No selling, renting or sharing personal information.</li>
+</ul>
+<ul>
+<li>No training of any model on anything the app holds.</li>
+</ul>
+<ul>
+<li>No background uploads. Nothing is sent while you are not looking.</li>
+</ul>
+<h2>4. Children</h2>
+<p>Haven is usually used <em>by</em> or <em>for</em> a child who cannot speak. There is no children&#x27;s account, no sign-up and no profile on a server. The caregiver sets the app up on the phone and is the person responsible for the information on it. The child&#x27;s photographs, records and films stay on that device.</p>
+<h2>5. Permissions, and why each one is asked for</h2>
+<table><tbody>
+<tr><th>Permission</th><th>Why</th></tr>
+<tr><td>Camera</td><td>to photograph the person&#x27;s own cup, chair, bus stop — the pictures the board is made of</td></tr>
+<tr><td>Photos / storage</td><td>to choose an existing picture or film</td></tr>
+<tr><td>Microphone</td><td>only if you record your own voice for a card or a film caption</td></tr>
+<tr><td>Notifications</td><td>reminders a caregiver sets; nothing promotional</td></tr>
+<tr><td>Bluetooth</td><td>to connect a wearable, and to hand a file to another phone</td></tr>
+<tr><td>Internet</td><td>the four items in section 2, and nothing else</td></tr>
+<tr><td>Location (only on Android 11 and older)</td><td>Android requires it for Bluetooth scanning on those versions. Haven does not use your location and stores none.</td></tr>
+</tbody></table>
+<h2>6. How long things are kept, and how to delete them</h2>
+<ul>
+<li><strong>Counts of what Haven noticed</strong> are kept for 28 days, and at most 3,000 events per person. Older ones are deleted automatically.</li>
+</ul>
+<ul>
+<li><strong>Everything else</strong> stays until you delete it: a picture, a record, a film, a child&#x27;s page. Deleting is permanent.</li>
+</ul>
+<ul>
+<li><strong>Films</strong> are capped at 500 MB per person; the app tells you before it reaches that.</li>
+</ul>
+<ul>
+<li><strong>Uninstalling Haven deletes the database, the films and the key.</strong> There is no copy anywhere else to delete.</li>
+</ul>
+<ul>
+<li><strong>Removing the caregiver space</strong> does not touch the person&#x27;s own records; a test in the app checks exactly that.</li>
+</ul>
+<h2>7. Security — honestly</h2>
+<ul>
+<li>The database file is encrypted at rest, with a key unique to that install.</li>
+</ul>
+<ul>
+<li>The caregiver space is protected by a passphrase of at least 8 characters, stretched with PBKDF2-SHA256 (120,000 rounds); only the salt and the digest are stored. Five wrong attempts lock it for a minute.</li>
+</ul>
+<ul>
+<li><strong>What encryption cannot do:</strong> if the phone is unlocked and in someone else&#x27;s hands, the app can be opened. Haven protects the file, not a seized, unlocked phone. There is no remote wipe, because there is no server to ask.</li>
+</ul>
+<ul>
+<li>Because there is no Haven account and no Haven database of users, there is no Haven breach to have.</li>
+</ul>
+<h2>8. Your rights</h2>
+<p>Under the <strong>Nigeria Data Protection Act 2023</strong>, and under similar laws where you live, you can ask what is held about you, ask for a copy, ask for correction, and ask for deletion. For Haven, the practical answer is the app itself: the information is on your phone, in the app, and you can read, correct or delete all of it there.</p>
+<p>For anything held elsewhere — a payment reference held by the payment worker, or an email you sent us — write to <strong>favourope78@gmail.com</strong> and it will be dealt with.</p>
+<h2>9. Changes</h2>
+<p>When this policy changes, the version and date at the top change with it, and the new version ships with the next build of the app. The current version is always at this address.</p>
+<p><strong>Haven is a communication and record-keeping aid. It is not a medical device and it does not diagnose anything.</strong></p>
+<footer>This is the same text that ships inside the app (Settings → Privacy), version 1.9.16 · effective 29 October 2026. Written by Favour Onilamo.</footer>
+</main>
+</body>
+</html>
